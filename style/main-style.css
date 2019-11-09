@@ -1,0 +1,272 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 16px;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    background: #ebebeb;
+    font-family: mp;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+.mainHeader {
+    background-color: #f6753e;
+    font-family: demi;
+    display: flex;
+    align-items: center;
+    padding: 5px 30px;
+}
+
+.navigation li {
+    display: inline-block;
+    font-size: 20px;
+    margin-right: 20px;
+
+}
+
+.navigation li a {
+    text-decoration: none;
+    color: white;
+}
+.navigation li a:hover {
+    text-decoration: line-through;
+    color: yellow;
+}
+
+.logo {
+    width: 25%;
+    text-align: center;
+}
+
+.logoTop{
+    font-size: 32px;
+    margin-bottom: -5px;
+    color: white;}
+
+.logoBottom{
+    font-size: 13px;
+    color: white;}
+
+.mainNav {
+    width: 50%;
+    text-align: center;
+}
+
+.loginOff {
+    width: 25%;
+    text-align: center;
+
+}
+.loginOn{
+    width: 25%;
+    text-align: center;
+    display: none;
+}
+
+.switch-login {
+    font-size: 20px;
+    color: white;
+}
+
+.information {
+    background-color: white;
+    height: 300px;
+    padding: 0px 30px;
+}
+.ticket {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px 0px;
+}
+
+.quest-card {
+    width: 23%;
+    max-width: 400px;
+    min-width: 400px;
+    background-size: cover;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    font-family: mp;
+    color: white;
+    box-shadow: 2px 2px 5px 0px black;
+    background-position: center;
+}
+
+
+.mainFooter{
+    background-color: #f6753e;
+}
+.content-card{
+    padding: 10px;
+}
+.top-content{
+    display: flex;
+}
+.genre{
+    width: 50%;
+}
+.rating{
+    width: 50%;
+    text-align: end;
+}
+.center-content{
+   height: 240px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.bottom-content{
+    padding: 6px 0;
+    /*border-radius: 100px;*/
+    background-color: #f6753e;
+    text-align: center;
+    vertical-align: bottom;
+    margin: -10px;
+    text-transform: uppercase;
+}
+
+.info-content{
+    text-align: center;
+    display: none;
+}
+.quest-card:hover .info-content{
+    display: block;
+}
+.quest-card:hover .content-card{
+    background: rgba(0, 0, 0, 0.8);
+}
+/*
+.quest-card:hover .bottom-content{
+    background: rgba(246, 117, 62, 0);
+}*/
+
+.imgQuest {
+    width: 450px;
+    height: 310px;
+    background-size: cover;
+    border: 2px solid #f6753e;
+    margin-right: 60px;
+}
+
+.infoAll {
+    justify-content: space-around;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.questDescription {
+    width: 60%;
+}
+.description {
+    font-size: 25px;
+    margin-bottom: 3%
+}
+.listInfo{
+    font-size: 20px;
+}
+.borderForList{
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid #f6753e;
+    border-radius: 15px;
+    padding: 16px;
+}
+.borderForList li {
+    margin-right: 5%;
+}
+
+.borderForList li a {
+
+    color: black;
+}
+
+.questName{
+text-align: center;
+font-size: 50px;
+font-weight: bold;
+margin-bottom: 2%;
+}
+
+.mapsDescription {
+    padding: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.prokrutka{
+    width: 40vw;
+    height: 50vh;
+    overflow: auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.enigma {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 2px solid #f6753e;
+    margin-right: 10px;
+    width: 200px;
+
+}
+
+.imgList {
+    margin-top: 5px;
+}
+
+
+
+@font-face{
+font-family: "demi";
+src: url("../fonts/demi.ttf") format("truetype");
+font-style: normal;
+font-weight: normal;
+}
+
+@font-face{
+font-family: "mp";
+src: url("../fonts/MyriadPro-Regular.otf") format("truetype");
+font-style: normal;
+font-weight: normal;
+}

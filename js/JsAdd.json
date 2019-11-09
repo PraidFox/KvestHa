@@ -1,0 +1,59 @@
+{
+    "jsJSON": [
+        {
+            "mapsLong": "48.4808",
+            "mapsWodth": "135.0885",
+            "arreyID": "2,3,4,5"
+        },
+        {
+            "mapsLong": "48.4667",
+            "mapsWodth": "135.0724",
+            "arreyID": "6"
+        },
+        {
+            "mapsLong": "48.5072",
+            "mapsWodth": "135.0436",
+            "arreyID": "7,8"
+        },
+        {
+            "mapsLong": "48.4873",
+            "mapsWodth": "135.0658",
+            "arreyID": "9,10"
+        },
+        {
+            "mapsLong": "48.4811",
+            "mapsWodth": "135.0657",
+            "arreyID": "11,12"
+        },
+        {
+            "mapsLong": "48.4836",
+            "mapsWodth": "135.0922",
+            "arreyID": "13,14"
+        },
+        {
+            "mapsLong": "48.4849",
+            "mapsWodth": "135.0522",
+            "arreyID": "15"
+        },
+        {
+            "mapsLong": "48.4927",
+            "mapsWodth": "135.0803",
+            "arreyID": "16,17,18,21"
+        },
+        {
+            "mapsLong": "48.3993",
+            "mapsWodth": "135.0998",
+            "arreyID": "19,2"
+        },
+        {
+            "mapsLong": "48.4904",
+            "mapsWodth": "135.0884",
+            "arreyID": "22,23"
+        },
+        {
+            "mapsLong": "48.4909",
+            "mapsWodth": "135.0765",
+            "arreyID": "24,25"
+        }
+    ]
+}
