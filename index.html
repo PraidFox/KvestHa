@@ -7,9 +7,7 @@
 
     <script type="text/javascript" src="js/mainJS.js"></script>
 </head>
-<body>
-
-<header class="mainHeader">
+<body><header class="mainHeader">
     <div class="logo">
         <div class="logoTop">КвестХа</div>
         <div class="logoBottom">квесты Хабаровска</div>
@@ -22,32 +20,31 @@
                 <li><a href="#" class="verh">ИМХО</a></li>
             </ul>
         </nav>
-    <ul class="loginOff">
+    <!--<ul class="loginOff">
         <li class="switch-login">Войти</li>
     </ul>
     <ul class="loginOn">
         <li class="switch-login">Профиль</li>
-    </ul>
-</header>
-<main class="mainContainer">
+    </ul>-->
+</header><main class="mainContainer">
 
 
 
-<form action=# method="post" class="information"><br><br><br><br><br><br><br><br>
-Мы поможем подобрать Квест.<hr><br>
-<input type="button" value="Отсортировать по алфавиту" onclick="sortName()">
+<form action=# method="post" class="information">
+Мы поможем подобрать Квест.<hr>
 <input type="button" value="С участием актёра" onclick="trueAction()">
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск по названию..">
     </form>
-
+    <div class="sortirovka"><span>Отсортировать по: </span><input type="button" value="Алфавиту" onclick="sortName()"></div>
     <article class="ticket">
+    </article>
 
+ <footer class="mainFooter">
+     <div class="logo">
+     <div class="logoTop">КвестХа</div>
+     <div class="logoBottom">квесты Хабаровска</div>
+ </div>
+ </footer>
 
-     </article>
-
- <footer class="mainFooter">Здесь подвал</footer>
-
- </main>
-
- </body>
+ </main></body>
  </html>
