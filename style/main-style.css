@@ -135,9 +135,9 @@ table {
 
 .mainFooter{
     background-color: #f6753e;
-    position: relative;
+    position: absolute;
+    width: 100%;
     bottom: 0;
-    padding: 10px;
 }
 .content-card{
     padding: 10px;
@@ -258,7 +258,9 @@ margin-bottom: 2%;
     margin-top: 5px;
 }
 
-
+.oTDo {
+    width: 3%;
+}
 
 @font-face{
 font-family: "demi";

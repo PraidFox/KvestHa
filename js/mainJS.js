@@ -10,8 +10,22 @@ if (xhr.status != 200) {
 }
 
 window.onload = function(){
-sortName()
-//createOsnova(jsonKV);
+oneSort();
+createOption ();
+}
+
+function oneSort(){
+    jsonKV.sort(function (a, b) {
+        if (a.name > b.name) {
+            return 1;
+        }
+        if (a.name < b.name) {
+            return -1;
+        }
+        return 0;
+    });
+    document.getElementsByClassName("ticket")[0].innerHTML = "";
+    createOsnova(jsonKV);
 }
 
 function createOsnova(listKvest) {
@@ -22,6 +36,10 @@ function createOsnova(listKvest) {
     div.className = "quest-card";
     div.href = "kvest.html?"+listKvest[i].id;
     div.setAttribute("kvestName", listKvest[i].name);
+    div.setAttribute("userMin", listKvest[i].playersMin);
+    div.setAttribute("userMax", listKvest[i].playersMax);
+    div.setAttribute("company", listKvest[i].company);
+    div.setAttribute("Action", listKvest[i].perfomance);
     div.setAttribute("onclick", "");
     div.style.backgroundImage = "url('"+listKvest[i].image+"')";
     div.style.textDecoration = "none";
@@ -70,39 +88,95 @@ function createOsnova(listKvest) {
     }
 
 }
-function sortName(){
-    jsonKV.sort(function (a, b) {
-        if (a.name > b.name) {
-            return 1;
-        }
-        if (a.name < b.name) {
-            return -1;
-        }
-        return 0;
-    });
-    document.getElementsByClassName("ticket")[0].innerHTML = "";
-    createOsnova(jsonKV);
+function alertNOrating() {
+    alert("Сортировка по рейтингу еще не добавлена. Если вы видите эту надпись значит разработчк забыл скрыть эту кнопку. За это мы отберём у него печеньки.")
+}
+
+function createOption() {
+
+let companyMap = [];
+for(let i = 0; i<jsonKV.length; i++){
+    if(companyMap.indexOf(jsonKV[i].company) < 0){
+        companyMap.push(jsonKV[i].company);
+    }
+}
+
+let selectList = document.getElementById("companySelect")
+for (let i = 0; i<companyMap.length; i++){
+    var option = document.createElement("option");
+    option.value = companyMap[i];
+    option.text = companyMap[i];
+    selectList.appendChild(option);
+}
+}
+
+let map = new Map();
+
+function createSearch() {
+
+   /* let array = []*/
+
+let valueUsers = document.getElementById("valueUsers");
+let Action = document.getElementById("Action");
+let companySelect = document.getElementById("companySelect");
+let myInput = document.getElementById("myInput");
+
+
+map.set("valueUsers" , valueUsers.value);
+map.set("Action" , Action.value);
+map.set("companySelect" , companySelect.value);
+map.set("myInput" , myInput.value.toUpperCase());
+
+ createKvestList();
+}
+
+function createKvestList() {
+let arreyKvest = document.getElementsByClassName("quest-card");
+
+for(let i = 0; i<arreyKvest.length; i++){
+if(
+    arreyKvest[i].getAttribute("kvestname").toUpperCase().indexOf(map.get("myInput")) >= 0
+    && ( Number(arreyKvest[i].getAttribute("userMin")) <=  Number(map.get("valueUsers")) || map.get("valueUsers") == "")
+    && Number(arreyKvest[i].getAttribute("userMax")) >= Number(map.get("valueUsers"))
+    && (arreyKvest[i].getAttribute("company") == map.get("companySelect") || map.get("companySelect") == "Все компании")
+    && (arreyKvest[i].getAttribute("Action") === map.get("Action") || map.get("Action") == "notrue")
+){
+    arreyKvest[i].style.display = "block"
+} else {
+    arreyKvest[i].style.display = "none"
+}
+}
+
 }
 
 function trueAction(){
-    let tmp = [];
-    for(let i = 0; i<jsonKV.length; i++){
-        if(jsonKV[i].perfomance == "true"){
-            tmp.push(jsonKV[i]);
-        }
+    let bottom = document.getElementById("Action");
+    if(bottom.value == "true"){
+        console.log("Пришла правда");
+        bottom.setAttribute("value", "notrue");
+        bottom.checked = false;
+    } else if(bottom.value == "notrue"){
+        console.log("Пришла лож");
+        bottom.setAttribute("value", "true");
+        bottom.checked = true;
     }
 
-    //console.log(tmp);
-    document.getElementsByClassName("ticket")[0].innerHTML = "";
-    createOsnova(tmp);
-
+    createSearch();
 }
 
+
+
+
+
+
+
+
+
+/*
 function myFunction(){
     let input = document.getElementById('myInput');
     let value = input.value.toUpperCase();
     let elements = document.getElementsByClassName("quest-card");
-    console.log(value);
     for(let i = 0; i< elements.length; i++ ){
         if(elements[i].getAttribute("kvestname").toUpperCase().indexOf(value) < 0){
             elements[i].style.display = "none"
@@ -113,7 +187,39 @@ function myFunction(){
     }
 
 }
-/*
-let locationObj = document.location
-locationObj.search
-locationObj.search.replace("?", "")*/
+
+
+
+function numberUsersMin() {
+    let input = document.getElementsByClassName('oTDo');
+    let value = input[0].value;
+    let elements = document.getElementsByClassName("quest-card");
+    for(let i = 0; i<elements.length; i++){
+        if(elements[i].getAttribute("userMin").indexOf(value) < 0){
+            elements[i].style.display = "none";
+        }
+        if(elements[i].getAttribute("userMin").indexOf(value) >= 0){
+            elements[i].style.display = "block";
+        }
+    }
+}
+
+
+function numberUsersMax() {
+    let input = document.getElementsByClassName('oTDo');
+    let value = input[1].value;
+    let elements = document.getElementsByClassName("quest-card");
+    for(let i = 0; i<elements.length; i++){
+        if(elements[i].getAttribute("userMax").indexOf(value) < 0){
+            elements[i].style.display = "none";
+        }
+        if(elements[i].getAttribute("userMax").indexOf(value) >= 0){
+            elements[i].style.display = "block";
+        }
+    }
+}
+
+*/
+
+
+

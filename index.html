@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>KvestHa</title>
     <link href="style/main-style.css" rel="stylesheet">
-
     <script type="text/javascript" src="js/mainJS.js"></script>
 </head>
 <body><header class="mainHeader">
@@ -32,10 +31,18 @@
 
 <form action=# method="post" class="information">
 Мы поможем подобрать Квест.<hr>
-<input type="button" value="С участием актёра" onclick="trueAction()">
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск по названию..">
+Количество игроков: <input type="number" onkeyup="createSearch()" id="valueUsers" min="1">
+С участием актёра: <input type="radio" onclick="trueAction()" id="Action" value="notrue">
+Компания:  <select id="companySelect" onclick="createSearch()">
+        <option selected >Все компании</option>
+        <
+    </select>
+<input type="text" id="myInput" onkeyup="createSearch()" placeholder="Поиск по названию..">
     </form>
-    <div class="sortirovka"><span>Отсортировать по: </span><input type="button" value="Алфавиту" onclick="sortName()"></div>
+    <div class="sortirovka"><span>Отсортировать по:</span>
+    <input type="button" value="Алфавиту" onclick="sortName()">
+    <input type="button" value="Рейтингу" onclick="alertNOrating()">
+    </div>
     <article class="ticket">
     </article>
 
