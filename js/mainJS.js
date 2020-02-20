@@ -12,7 +12,10 @@ if (xhr.status != 200) {
 window.onload = function(){
 oneSort();
 createOption ();
+
 }
+
+
 
 function oneSort(){
     jsonKV.sort(function (a, b) {
@@ -147,7 +150,25 @@ if(
 }
 }
 
+    if (document.body.offsetHeight > window.innerHeight) {
+        //alert("Скролл есть");
+        document.querySelector('.mainFooter').style.position = 'relative'
+    } else {
+        //alert("Скролла нет");
+        document.querySelector('.mainFooter').style.position = 'absolute'
+    }
 }
+
+window.onresize= function(){
+    if (document.body.offsetHeight > window.innerHeight) {
+        //alert("Скролл есть и окно изменилось");
+        document.querySelector('.mainFooter').style.position = 'relative'
+    } else {
+        //alert("Скролла нет и окно изменилос");
+        document.querySelector('.mainFooter').style.position = 'absolute'
+    }
+}
+
 
 function trueAction(){
     let bottom = document.getElementById("Action");

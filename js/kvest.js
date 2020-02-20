@@ -11,7 +11,19 @@ if (xhr.status != 200) {
 
 window.onload = function(){
     createPage()
+    whichPosition()
 }
+
+function whichPosition() {
+    if (document.body.offsetHeight > window.innerHeight) {
+        //alert("Скролл есть и окно изменилось");
+        document.querySelector('.mainFooter').style.position = 'relative'
+    } else {
+        //alert("Скролла нет и окно изменилос");
+        document.querySelector('.mainFooter').style.position = 'absolute'
+    }
+}
+
 
 function createPage() {
 
@@ -34,20 +46,30 @@ function createPage() {
 
     document.getElementsByClassName("minAge")[0].innerHTML = "Минимальный возвраст: "+jsonKV[number].ageMin +" лет";
     if(jsonKV[number].playersMax == jsonKV[number].playersMaxDop){
-       document.getElementsByClassName("numberPlayers")[0].innerHTML = "Количество игроков: "+"от "+jsonKV[number].playersMin+" до "+jsonKV[number].playersMax;
+       document.getElementsByClassName("numberPlayers")[0].innerHTML = jsonKV[number].playersMin+" - "+jsonKV[number].playersMax + "<br>" + "игрока";
     } else {
-        document.getElementsByClassName("numberPlayers")[0].innerHTML = "Количество игроков: "+"от "+jsonKV[number].playersMin+" до "+jsonKV[number].playersMax + " (+"+ (jsonKV[number].playersMaxDop - jsonKV[number].playersMax) +")";
+        document.getElementsByClassName("numberPlayers")[0].innerHTML = jsonKV[number].playersMin+" - "+jsonKV[number].playersMax + " (+"+ (jsonKV[number].playersMaxDop - jsonKV[number].playersMax) +")" + "<br>" + "игрока";
     }
 
-    document.getElementsByClassName("timeGame")[0].innerHTML = "Время игры: "+jsonKV[number].timeGame + " минут";
+    document.getElementsByClassName("timeGame")[0].innerHTML = jsonKV[number].timeGame + "<br>" + "минут";
     if(jsonKV[number].priceMin == jsonKV[number].priceMax){
         document.getElementsByClassName("prise")[0].innerHTML = "Цена: "+jsonKV[number].priceMin + " рублей";
     } else {
         document.getElementsByClassName("prise")[0].innerHTML = "Цена от "+jsonKV[number].priceMin+" до " +jsonKV[number].priceMax + " рублей";
     }
 
-    document.getElementsByClassName("site")[0].innerHTML = "Сайт: <a href ="+jsonKV[number].site+"> "+jsonKV[number].name+ "</a>";
+    document.getElementsByClassName("site")[0].innerHTML = "<a href ="+jsonKV[number].site+"> " + "Перейти на сайт"+ "</a> ";
     document.getElementsByClassName("address")[0].innerHTML =  "Адрес: "+jsonKV[number].address;
     document.getElementsByClassName("phone")[0].innerHTML =  "Телефон: "+jsonKV[number].phone;
 
+}
+
+window.onresize= function(){
+    if (document.body.offsetHeight > window.innerHeight) {
+      //alert("Скролл есть и окно изменилось");
+        document.querySelector('.mainFooter').style.position = 'relative'
+    } else {
+        //alert("Скролла нет и окно изменилос");
+        document.querySelector('.mainFooter').style.position = 'absolute'
+    }
 }

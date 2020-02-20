@@ -59,8 +59,8 @@ table {
     display: inline-block;
     font-size: 20px;
     margin-right: 20px;
-
 }
+
 
 .navigation li a {
     text-decoration: none;
@@ -71,19 +71,25 @@ table {
     color: yellow;
 }
 
+
+
 .logo {
     width: 25%;
     text-align: center;
+    text-decoration: none;
 }
 
 .logoTop{
     font-size: 32px;
     margin-bottom: -5px;
-    color: white;}
+    color: white;
+
+    }
 
 .logoBottom{
     font-size: 13px;
-    color: white;}
+    color: white;
+    }
 
 .mainNav {
     width: 50%;
@@ -132,34 +138,65 @@ table {
     background-position: center;
 }
 
+.information span {
+    margin-right: 2%;
+}
+
+.sortirovka{
+    padding: 14px 30px;
+}
 
 .mainFooter{
     background-color: #f6753e;
-    position: absolute;
     width: 100%;
     bottom: 0;
+    padding: 5px 0px;
+    font-family: demi;
+    display: flex;
+    align-items: center;
 }
+
+.midFoot {
+color: white;
+text-align: center;
+width: 50%;
+}
+
+.mySoc{
+width: 25%;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center
+}
+.soc {
+margin-right: 12px;
+}
+.bottomMid {
+font-size: 22px;
+}
+
 .content-card{
-    padding: 10px;
+padding: 10px;
 }
 .top-content{
-    display: flex;
+display: flex;
 }
 .genre{
-    width: 50%;
+width: 50%;
 }
 .rating{
-    width: 50%;
-    text-align: end;
+width: 50%;
+text-align: end;
 }
 .center-content{
-   height: 240px;
-    display: table-cell;
-    vertical-align: middle;
+height: 240px;
+display: table-cell;
+vertical-align: middle;
 }
 .bottom-content{
-    padding: 6px 0;
-    /*border-radius: 100px;*/
+padding: 6px 0;
+/*border-radius: 100px;*/
     background-color: #f6753e;
     text-align: center;
     vertical-align: bottom;
@@ -183,33 +220,58 @@ table {
 }*/
 
 .imgQuest {
-    width: 450px;
+    width: 35%;
     height: 310px;
     background-size: cover;
+    background-position: center;
     border: 2px solid #f6753e;
-    margin-right: 60px;
+    margin-right: 5%;
+    min-width: 350px;
 }
 
 .infoAll {
     justify-content: space-around;
     padding: 50px;
+    width: 84%;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .questDescription {
-    width: 60%;
+    width: 55%;
+    min-width: 390px;
 }
 .description {
     font-size: 25px;
-    margin-bottom: 3%
+    margin-bottom: 3%;
+    text-align: justify;
 }
 .listInfo{
     font-size: 20px;
+    width: 82%;
+    margin: auto;
 }
+
+.site{
+    padding: 10px;
+       border-radius: 11px;
+    background: #f6753e;
+}
+.ssilka{
+
+}
+.site a{
+    text-decoration: none;
+    color: white;
+}
+
+
 .borderForList{
-    display: flex;
+   display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     border: 2px solid #f6753e;
     border-radius: 15px;
     padding: 16px;
@@ -258,8 +320,36 @@ margin-bottom: 2%;
     margin-top: 5px;
 }
 
+.infoThree{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
 .oTDo {
     width: 3%;
+}
+
+.novosti {
+    border: solid 1px black;
+}
+
+.novosti .zagolovok {
+    padding: 0 1em;
+}
+
+.mainInfo{
+    margin: auto;
+    width: 80%;
+}
+
+.insta{
+    filter: grayscale(100%);
+}
+
+.vk{
+    filter: grayscale(100%);
 }
 
 @font-face{

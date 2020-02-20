@@ -26,7 +26,7 @@ var map;
 
 DG.then(function () {
     map = DG.map('map', {
-        center: [48.48, 135.08],
+        center: [48.46, 135.08],
         zoom: 12
     });
 
@@ -46,7 +46,10 @@ DG.then(function () {
        })*/
        let boody = ''
        for(let j = 0; j <arrayIDkvest.length; j++){
-           boody += "<div><h2>"+jsonKV[arrayIDkvest[j]-2].name+"</h2></div>"
+          //boody += "<div><h2> "+jsonKV[arrayIDkvest[j]-2].name+"</h2></div>"
+           boody += "<div><h2><a href ="+document.location.origin+"/kvest.html?"+ jsonKV[arrayIDkvest[j]-2].id+" style=\"\n" +
+               "    color: white;\n" +
+               "\" > " + "* "+ jsonKV[arrayIDkvest[j]-2].name+ "</a></h2></div> "
        }
        pop.bindPopup(boody);
 
@@ -54,8 +57,18 @@ DG.then(function () {
 });
 
 window.onload = function(){
-    createList()
+    //createList()
+    whichPosition()
 //createOsnova(jsonKV);
+}
+function whichPosition() {
+    if (document.body.offsetHeight > window.innerHeight) {
+        //alert("Скролл есть и окно изменилось");
+        document.querySelector('.mainFooter').style.position = 'relative'
+    } else {
+        //alert("Скролла нет и окно изменилос");
+        document.querySelector('.mainFooter').style.position = 'absolute'
+    }
 }
 
 function createList(){

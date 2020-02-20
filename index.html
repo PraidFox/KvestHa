@@ -3,55 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <title>KvestHa</title>
+
     <link href="style/main-style.css" rel="stylesheet">
     <script type="text/javascript" src="js/mainJS.js"></script>
 </head>
-<body><header class="mainHeader">
-    <div class="logo">
+<body>
+<header class="mainHeader">
+    <a  href="mainList.html" class="logo">
         <div class="logoTop">КвестХа</div>
         <div class="logoBottom">квесты Хабаровска</div>
-    </div>
-        <nav class="mainNav">
-            <ul class="navigation">
-                <li><a href="index.html" class="verh">КВЕСТЫ</a></li>
-                <li><a href="#" class="verh">КОМПАНИЯ</a></li>
-                <li><a href="MapsKvest.html" class="verh">КАРТА КВЕСТОВ</a></li>
-                <li><a href="#" class="verh">ИМХО</a></li>
-            </ul>
-        </nav>
+    </a>
+    <nav class="mainNav">
+        <ul class="navigation">
+            <li><a href="index.html" class="verh">КВЕСТЫ</a></li>
+            <li><a href="MapsKvest.html" class="verh">КАРТА КВЕСТОВ</a></li>
+            <li><a href="#" class="verh">ИМХО</a></li>
+        </ul>
+    </nav>
     <!--<ul class="loginOff">
-        <li class="switch-login">Войти</li>
-    </ul>
-    <ul class="loginOn">
-        <li class="switch-login">Профиль</li>
-    </ul>-->
-</header><main class="mainContainer">
+            <li class="switch-login">Войти</li>
+        </ul>
+        <ul class="loginOn">
+            <li class="switch-login">Профиль</li>
+        </ul>-->
+</header>
+
+<main class="mainContainer">
 
 
 
 <form action=# method="post" class="information">
-Мы поможем подобрать Квест.<hr>
-Количество игроков: <input type="number" onkeyup="createSearch()" id="valueUsers" min="1">
-С участием актёра: <input type="radio" onclick="trueAction()" id="Action" value="notrue">
-Компания:  <select id="companySelect" onclick="createSearch()">
+<span>Мы поможем подобрать Квест.</span>   <hr>
+    <span>Количество игроков: <input type="number" onchange="createSearch()" id="valueUsers" min="1" style="width: 35px"></span>
+    <span>С участием актёра: <input type="radio" onclick="trueAction()" id="Action" value="notrue"></span>
+    <span>Компания:  <select id="companySelect" onchange="createSearch()">
         <option selected >Все компании</option>
-        <
-    </select>
+
+    </select></span>
 <input type="text" id="myInput" onkeyup="createSearch()" placeholder="Поиск по названию..">
     </form>
-    <div class="sortirovka"><span>Отсортировать по:</span>
-    <input type="button" value="Алфавиту" onclick="sortName()">
-    <input type="button" value="Рейтингу" onclick="alertNOrating()">
+    <!-- <div class="sortirovka"><span>Отсортировать по:</span>
+     <input type="button" value="Алфавиту" onclick="sortName()">
+        <input type="button" value="Рейтингу" onclick="alertNOrating()">
+        </div>-->
+        <article class="ticket">
+        </article>
+
+
+
+     </main>
+<footer class="mainFooter">
+    <div class="logo">
+        <div class="logoTop">КвестХа</div>
+        <div class="logoBottom">квесты Хабаровска</div>
     </div>
-    <article class="ticket">
-    </article>
+    <div class="midFoot">
+        <span class="topMid">Вы нашли ошибку или у вас есть предложение? Обязательно напишите нам об этом.</span> <br>
+        <span class="bottomMid">kvestha@mail.ru</span>
 
- <footer class="mainFooter">
-     <div class="logo">
-     <div class="logoTop">КвестХа</div>
-     <div class="logoBottom">квесты Хабаровска</div>
- </div>
- </footer>
+    </div>
+    <div class="mySoc">
 
- </main></body>
- </html>
+        <span class="soc">Мы в соц. сетях:
+        </span>
+        <span ><img src="img/instagram.png" width="40px" height="40px" class="insta" alt="" title="В разработке">
+        <img src="img/image.png" width="40px" height="40px" alt="" class="vk" title="В разработке"></span>
+
+
+    </div>
+</footer>
+
+    </body>
+     </html>
