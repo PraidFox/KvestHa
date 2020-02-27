@@ -34,7 +34,7 @@ function oneSort(){
 function createOsnova(listKvest) {
 
     for(let i = 0; i<listKvest.length; i++){
-
+if(listKvest[i].relevant == "true"){
     let div = document.createElement('a');
     div.className = "quest-card";
     div.href = "kvest.html?"+listKvest[i].id;
@@ -89,7 +89,7 @@ function createOsnova(listKvest) {
     var wherever = document.getElementsByClassName("ticket");
     wherever[0].appendChild(div);
     }
-
+    }
 }
 function alertNOrating() {
     alert("Сортировка по рейтингу еще не добавлена. Если вы видите эту надпись значит разработчк забыл скрыть эту кнопку. За это мы отберём у него печеньки.")
@@ -117,16 +117,23 @@ let map = new Map();
 
 function createSearch() {
 
-   /* let array = []*/
+
 
 let valueUsers = document.getElementById("valueUsers");
 let Action = document.getElementById("Action");
+let Morphed = document.getElementById("Morphe");
 let companySelect = document.getElementById("companySelect");
 let myInput = document.getElementById("myInput");
 
 
 map.set("valueUsers" , valueUsers.value);
 map.set("Action" , Action.value);
+if(Morphed.value == 'true'){
+    map.set("Morphed" , 'morphe');
+} else {
+    map.set("Morphed" , Morphed.value);
+}
+
 map.set("companySelect" , companySelect.value);
 map.set("myInput" , myInput.value.toUpperCase());
 
@@ -135,20 +142,43 @@ map.set("myInput" , myInput.value.toUpperCase());
 
 function createKvestList() {
 let arreyKvest = document.getElementsByClassName("quest-card");
-
+    let bool = true
 for(let i = 0; i<arreyKvest.length; i++){
+
+
+
 if(
     arreyKvest[i].getAttribute("kvestname").toUpperCase().indexOf(map.get("myInput")) >= 0
     && ( Number(arreyKvest[i].getAttribute("userMin")) <=  Number(map.get("valueUsers")) || map.get("valueUsers") == "")
     && Number(arreyKvest[i].getAttribute("userMax")) >= Number(map.get("valueUsers"))
     && (arreyKvest[i].getAttribute("company") == map.get("companySelect") || map.get("companySelect") == "Все компании")
-    && (arreyKvest[i].getAttribute("Action") === map.get("Action") || map.get("Action") == "notrue")
+    && ((map.get("Action") == "notrue" && map.get("Morphed") == "notrue") || (arreyKvest[i].getAttribute("Action") === map.get("Action") || arreyKvest[i].getAttribute("Action") === map.get("Morphed")))
+
 ){
     arreyKvest[i].style.display = "block"
+    bool = false
 } else {
     arreyKvest[i].style.display = "none"
 }
+
+
+
 }
+    let tmp = document.getElementsByClassName("Nothing-found")
+    if(bool == true && tmp.length < 1){
+        document.getElementsByClassName("Nothing-found")[0]
+        let span = document.createElement('span');
+        span.className = "Nothing-found";
+        span.innerHTML = "Нет совпадений. Попробуйте изменить условия поиска."
+        document.getElementsByClassName("ticket")[0].appendChild(span);
+        let divQuote = document.createElement('div');
+        divQuote.className = "quote";
+        divQuote.innerHTML = "Для Шерлока Холмса она всегда оставалась «Этой Женщиной». Я редко слышал, чтобы он называл ее каким-либо другим именем. В его глазах она затмевала всех представительниц своего пола. Не то чтобы он испытывал к Ирэн Адлер какое-либо чувство, близкое к любви. Все чувства, и особенно любовь, были ненавистны его холодному, точному, но удивительно уравновешенному уму. По-моему, он был самой совершенной мыслящей и наблюдающей машиной, какую когда-либо видел мир; но в качестве влюбленного он оказался бы не на своем месте. Он всегда говорил о нежных чувствах не иначе, как с презрительной насмешкой, с издевкой. Нежные чувства были в его глазах великолепным объектом для наблюдения, превосходным средством сорвать покров с человеческих побуждений и дел. Но для изощренного мыслителя допустить такое вторжение чувства в свой утонченный и великолепно налаженный внутренний мир означало бы внести туда смятение, которое свело бы на нет все завоевания его мысли."
+        document.getElementsByClassName("ticket")[0].appendChild(divQuote);
+    } else if(bool == false && tmp.length > 0){
+        tmp.remove()
+        document.getElementsByClassName("quote")[0].remove()
+    }
 
     if (document.body.offsetHeight > window.innerHeight) {
         //alert("Скролл есть");
@@ -171,13 +201,14 @@ window.onresize= function(){
 
 
 function trueAction(){
-    let bottom = document.getElementById("Action");
+    //console.log(event.currentTarget);
+    let bottom = document.getElementById(event.currentTarget.id);
     if(bottom.value == "true"){
-        console.log("Пришла правда");
+        //console.log("Пришла правда");
         bottom.setAttribute("value", "notrue");
         bottom.checked = false;
     } else if(bottom.value == "notrue"){
-        console.log("Пришла лож");
+       // console.log("Пришла лож");
         bottom.setAttribute("value", "true");
         bottom.checked = true;
     }

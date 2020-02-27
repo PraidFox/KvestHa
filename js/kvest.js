@@ -41,6 +41,8 @@ function createPage() {
     document.getElementsByClassName("questName")[0].innerHTML = jsonKV[number].name;
     if(jsonKV[number].perfomance == "true"){
         document.getElementsByClassName("miniName")[0].innerHTML = "C участием актёра!"
+    } else if( jsonKV[number].perfomance == "morphe" ){
+        document.getElementsByClassName("miniName")[0].innerHTML = "Морфиус"
     }
     document.getElementsByClassName("description")[0].innerHTML = jsonKV[number].description;
 

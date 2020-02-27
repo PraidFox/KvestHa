@@ -34,8 +34,9 @@
 
 <form action=# method="post" class="information">
 <span>Мы поможем подобрать Квест.</span>   <hr>
-    <span>Количество игроков: <input type="number" onchange="createSearch()" id="valueUsers" min="1" style="width: 35px"></span>
+    <span>Количество игроков: <input type="number" onchange="createSearch()" onkeyup="createSearch()" id="valueUsers" min="1" style="width: 35px"></span>
     <span>С участием актёра: <input type="radio" onclick="trueAction()" id="Action" value="notrue"></span>
+    <span>Морфиус: <input type="radio" onclick="trueAction()" id="Morphe" value="notrue"></span>
     <span>Компания:  <select id="companySelect" onchange="createSearch()">
         <option selected >Все компании</option>
 
