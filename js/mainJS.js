@@ -166,18 +166,40 @@ if(
 }
     let tmp = document.getElementsByClassName("Nothing-found")
     if(bool == true && tmp.length < 1){
-        document.getElementsByClassName("Nothing-found")[0]
+
+
+        let divFound = document.createElement('div')
+        divFound.className = "divFound";
+        document.getElementsByClassName("ticket")[0].appendChild(divFound);
+
         let span = document.createElement('span');
         span.className = "Nothing-found";
         span.innerHTML = "Нет совпадений. Попробуйте изменить условия поиска."
-        document.getElementsByClassName("ticket")[0].appendChild(span);
-        let divQuote = document.createElement('div');
-        divQuote.className = "quote";
-        divQuote.innerHTML = "Для Шерлока Холмса она всегда оставалась «Этой Женщиной». Я редко слышал, чтобы он называл ее каким-либо другим именем. В его глазах она затмевала всех представительниц своего пола. Не то чтобы он испытывал к Ирэн Адлер какое-либо чувство, близкое к любви. Все чувства, и особенно любовь, были ненавистны его холодному, точному, но удивительно уравновешенному уму. По-моему, он был самой совершенной мыслящей и наблюдающей машиной, какую когда-либо видел мир; но в качестве влюбленного он оказался бы не на своем месте. Он всегда говорил о нежных чувствах не иначе, как с презрительной насмешкой, с издевкой. Нежные чувства были в его глазах великолепным объектом для наблюдения, превосходным средством сорвать покров с человеческих побуждений и дел. Но для изощренного мыслителя допустить такое вторжение чувства в свой утонченный и великолепно налаженный внутренний мир означало бы внести туда смятение, которое свело бы на нет все завоевания его мысли."
-        document.getElementsByClassName("ticket")[0].appendChild(divQuote);
+        document.getElementsByClassName("divFound")[0].appendChild(span);
+
+        let blockquote = document.createElement('blockquote');
+        blockquote.className = "blockquote";
+        document.getElementsByClassName("divFound")[0].appendChild(blockquote);
+
+
+        let pQuote = document.createElement('p');
+        pQuote.className = "quote";
+        pQuote.innerHTML = "Для Шерлока Холмса она всегда оставалась «Этой Женщиной». Я редко слышал, чтобы он называл ее каким-либо другим именем. В его глазах она затмевала всех представительниц своего пола. Не то чтобы он испытывал к Ирэн Адлер какое-либо чувство, близкое к любви. Все чувства, и особенно любовь, были ненавистны его холодному, точному, но удивительно уравновешенному уму. По-моему, он был самой совершенной мыслящей и наблюдающей машиной, какую когда-либо видел мир; но в качестве влюбленного он оказался бы не на своем месте. Он всегда говорил о нежных чувствах не иначе, как с презрительной насмешкой, с издевкой. Нежные чувства были в его глазах великолепным объектом для наблюдения, превосходным средством сорвать покров с человеческих побуждений и дел. Но для изощренного мыслителя допустить такое вторжение чувства в свой утонченный и великолепно налаженный внутренний мир означало бы внести туда смятение, которое свело бы на нет все завоевания его мысли."
+        document.getElementsByClassName("blockquote")[0].appendChild(pQuote);
+
+        let footer = document.createElement('footer');
+        footer.className = "footerQuote";
+        footer.innerHTML = "Приключения Шерлока Холмса (сборник) - Скандал в Богемии Нет совпадений."
+        document.getElementsByClassName("blockquote")[0].appendChild(footer);
+
+
+
     } else if(bool == false && tmp.length > 0){
-        tmp.remove()
+        document.getElementsByClassName("Nothing-found")[0].remove()
+        document.getElementsByClassName("divFound")[0].remove()
+        document.getElementsByClassName("blockquote")[0].remove()
         document.getElementsByClassName("quote")[0].remove()
+        document.getElementsByClassName("footerQuote")[0].remove()
     }
 
     if (document.body.offsetHeight > window.innerHeight) {

@@ -375,6 +375,64 @@ b {
     font-weight: bold;
 }
 
+.divFound{
+    text-align: center;
+    position: absolute;
+    top: 32%;
+}
+
+
+.Nothing-found{
+    font-size: 31px;
+    font-weight: bold;
+    margin-top: 3%;
+    color: #f6753e;
+    text-align: center;
+}
+/*
+.quote{
+    width: 64%;
+    text-align: justify;
+    border: 4px solid #f6753e;
+    padding: 14px;
+    margin: 2% auto;
+}*/
+
+blockquote {
+    margin: 0;
+    padding: 40px;
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    width: 74%;
+    margin: auto;
+}
+blockquote:before, blockquote:after {
+    font-size: 45px;
+    color: #f6753e;
+    position: absolute;
+    height: 2px;
+    left: 40px;
+    right: 40px;
+    line-height: .5;
+    background: linear-gradient(to right, #f6753e 45%, transparent 45%, transparent), linear-gradient(to right, transparent, transparent 55%, #f6753e 55%);
+    font-family: serif;
+}
+blockquote:before {
+    content: "\201C";
+    top: 30px;
+}
+blockquote:after {
+    content: "\201D";
+    bottom: 30px;
+}
+
+blockquote footer {
+    margin-bottom: 1em;
+    margin-top: 1em;
+    font-style: italic;
+}
+
 @font-face{
 font-family: "demi";
 src: url("../fonts/demi.ttf") format("truetype");
