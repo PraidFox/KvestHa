@@ -13,7 +13,7 @@
         {
             "mapsLong": "48.5072",
             "mapsWodth": "135.0436",
-            "arreyID": "26,27,8"
+            "arreyID": "26,27,8, 7"
         },
         {
             "mapsLong": "48.4873",
@@ -54,11 +54,6 @@
             "mapsLong": "48.4909",
             "mapsWodth": "135.0765",
             "arreyID": "24,25"
-        },
-        {
-            "mapsLong": "48.5068",
-            "mapsWodth": "135.0436",
-            "arreyID": "7"
         }
     ]
 }

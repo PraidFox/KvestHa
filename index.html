@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>KvestHa</title>
-
+    <link rel="shortcut icon" href="/img/faviconTwo.jpg" type="image/jpg">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <link href="style/main-style.css" rel="stylesheet">
     <script type="text/javascript" src="js/mainJS.js"></script>
 </head>
 <body>
 <header class="mainHeader">
+
+<div class="fullLogo">
     <a  href="mainList.html" class="logo">
+
         <div class="logoTop">КвестХа</div>
         <div class="logoBottom">квесты Хабаровска</div>
+
     </a>
+    <span class="beta">BETA</span>
+</div>
     <nav class="mainNav">
         <ul class="navigation">
             <li><a href="index.html" class="verh">КВЕСТЫ</a></li>
@@ -33,7 +40,7 @@
 
 
 <form action=# method="post" class="information">
-<span>Мы поможем подобрать Квест.</span>   <hr>
+<spanw>Мы поможем подобрать Квест.</spanw>   <hr>
     <span>Количество игроков: <input type="number" onchange="createSearch()" onkeyup="createSearch()" id="valueUsers" min="1" style="width: 35px"></span>
     <span>С участием актёра: <input type="radio" onclick="trueAction()" id="Action" value="notrue"></span>
     <span>Морфиус: <input type="radio" onclick="trueAction()" id="Morphe" value="notrue"></span>
@@ -41,7 +48,7 @@
         <option selected >Все компании</option>
 
     </select></span>
-<input type="text" id="myInput" onkeyup="createSearch()" placeholder="Поиск по названию..">
+    <span><input type="text" id="myInput" onkeyup="createSearch()" placeholder="Поиск по названию.."></span>
     </form>
     <!-- <div class="sortirovka"><span>Отсортировать по:</span>
      <input type="button" value="Алфавиту" onclick="sortName()">

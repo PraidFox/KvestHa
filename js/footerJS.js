@@ -2,6 +2,9 @@ window.onload = function(){
     whichPosition()
 }
 
+window.onresize= function(){
+    whichPosition()
+}
 
 
 function whichPosition() {
