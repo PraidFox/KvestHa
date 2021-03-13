@@ -6,24 +6,14 @@
             "arreyID": "2,3,4,5"
         },
         {
-            "mapsLong": "48.4667",
-            "mapsWodth": "135.0724",
-            "arreyID": "6"
-        },
-        {
             "mapsLong": "48.5072",
             "mapsWodth": "135.0436",
-            "arreyID": "26,27,8, 7"
-        },
-        {
-            "mapsLong": "48.4873",
-            "mapsWodth": "135.0658",
-            "arreyID": "9,10"
+            "arreyID": "7"
         },
         {
             "mapsLong": "48.4811",
             "mapsWodth": "135.0657",
-            "arreyID": "11,12"
+            "arreyID": "11,12,28"
         },
         {
             "mapsLong": "48.4836",
@@ -43,17 +33,22 @@
         {
             "mapsLong": "48.3993",
             "mapsWodth": "135.0998",
-            "arreyID": "19,2"
+            "arreyID": "19,20"
         },
         {
             "mapsLong": "48.4904",
             "mapsWodth": "135.0884",
-            "arreyID": "22,23"
+            "arreyID": "22"
         },
         {
             "mapsLong": "48.4909",
             "mapsWodth": "135.0765",
             "arreyID": "24,25"
+        },
+        {
+            "mapsLong": "48.4107",
+            "mapsWodth": "135.1072",
+            "arreyID": "29"
         }
     ]
 }

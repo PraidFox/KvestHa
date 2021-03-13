@@ -43,6 +43,8 @@ function createPage() {
         document.getElementsByClassName("miniName")[0].innerHTML = "C участием актёра!"
     } else if( jsonKV[number].perfomance == "morphe" ){
         document.getElementsByClassName("miniName")[0].innerHTML = "Морфиус"
+    } else {
+        document.getElementsByClassName("wrap")[0].remove("wrap")
     }
     document.getElementsByClassName("description")[0].innerHTML = jsonKV[number].description;
 

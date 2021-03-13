@@ -70,9 +70,7 @@ table {
     color: yellow;
 }
 
-.beta {
-    writing-mode: tb;
-}
+
 
 .logo {
     width: 25%;
@@ -233,6 +231,19 @@ padding: 6px 0;
     margin: 3% 5% 3% 0%;
 }
 
+.wrap {
+    width: 30%;
+    text-align: center;
+    padding: 1%;
+    border: 2px solid #f6753e;
+    border-radius: 37px;
+}
+
+.miniName {
+    font-weight: bolder;
+    color: #f5885a;
+}
+
 .mainContainer{
     margin-bottom: 5%;
 }
@@ -298,6 +309,7 @@ text-align: center;
 font-size: 50px;
 font-weight: bold;
 margin-bottom: 2%;
+    margin-top: 2%;
 }
 
 .mapsDescription {

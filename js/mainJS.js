@@ -89,6 +89,66 @@ if(listKvest[i].relevant == "true"){
     var wherever = document.getElementsByClassName("ticket");
     wherever[0].appendChild(div);
     }
+
+else {
+/*
+
+    let div = document.createElement('a');
+    div.className = "quest-card";
+    div.href = "kvest.html?"+listKvest[i].id;
+    div.setAttribute("kvestName", listKvest[i].name);
+    div.setAttribute("userMin", listKvest[i].playersMin);
+    div.setAttribute("userMax", listKvest[i].playersMax);
+    div.setAttribute("company", listKvest[i].company);
+    div.setAttribute("Action", listKvest[i].perfomance);
+    div.setAttribute("onclick", "");
+    div.style.backgroundImage = "url('"+listKvest[i].image+"')";
+    div.style.textDecoration = "none";
+
+    let divOne = document.createElement('div');
+    divOne.className = "content-card";
+    div.appendChild(divOne);
+
+    let divTwo = document.createElement('div');
+    divTwo.className = "top-content";
+    divOne.appendChild(divTwo);
+
+    let divThree = document.createElement('div');
+    divThree.className = "genre";
+    divThree.innerHTML = listKvest[i].company;
+    divTwo.appendChild(divThree);
+
+    let divFour = document.createElement('div');
+    divFour.className = "rating";
+    divFour.innerHTML = "от " + listKvest[i].playersMin + " до " + listKvest[i].playersMax;
+    divTwo.appendChild(divFour);
+
+    let content = document.createElement('div');
+    content.className = "center-content";
+    divOne.appendChild(content);
+
+    let pContent = document.createElement('p');
+    pContent.className = "info-content";
+    if(listKvest[i].description.length > 350){
+        pContent.innerHTML = listKvest[i].description.substr(0, 350)+"...";
+    } else {
+        pContent.innerHTML = listKvest[i].description;
+    }
+
+    content.appendChild(pContent);
+
+    let bottomCont = document.createElement('div');
+    bottomCont.className = "bottom-content";
+    bottomCont.innerHTML = listKvest[i].name;
+    divOne.appendChild(bottomCont);
+
+
+
+    var wherever = document.getElementsByClassName("ticket");
+    wherever[0].appendChild(div);
+*/
+}
+
     }
 }
 function alertNOrating() {
